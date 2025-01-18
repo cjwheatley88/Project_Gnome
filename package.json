@@ -1,0 +1,21 @@
+{
+    "name": "gnome",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "install-node": "npx n install",
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "author": "Christopher Wheatley",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.21.2",
+        "node-fetch": "^3.3.2",
+        "sass": "^1.32.0",
+        "vite": "^4.0.0"
+    }
+}
