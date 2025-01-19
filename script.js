@@ -1,4 +1,3 @@
-
 /*
   The script.js file contains the JavaScript code that will be executed
   The code below is the initial code that will be executed upon the page loading.
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const apiResponse = "I'm a gnome!";
       //console.log('User input:', userInt); // Debugging log
       //gnomeResponseElement.innerText = 'User Input: ' + userInt;
-      gnomeResponseElement.innerHTML = `<p>User Input: ${userInt}</p> <br> <p> Gnome Response: ${apiResponse}</p>`; 
+      gnomeResponseElement.innerHTML = `<p>User Input: ${userInt}</p> <br> <p class="typing-effect">Gnome Response: ${apiResponse}</p>`; 
       gnomeElement.style.display = 'none';
     }
   });
