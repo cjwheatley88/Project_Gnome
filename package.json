@@ -13,6 +13,8 @@
     "author": "Christopher Wheatley",
     "license": "MIT",
     "dependencies": {
+        "@google/generative-ai": "^0.21.0",
+        "dotenv": "^16.4.7",
         "express": "^4.21.2",
         "node-fetch": "^3.3.2",
         "sass": "^1.32.0",
