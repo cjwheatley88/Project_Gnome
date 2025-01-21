@@ -1,10 +1,32 @@
 /* The script.js file contains general HTML JavaScript code that will be executed */
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  const userIntElement = document.getElementById('userInt');
-  const gnomeResponseElement = document.getElementById('gnomeResponse');
-  const gnomeElement = document.getElementById('gnome'); // Fixed typo
-  
+document.addEventListener('DOMContentLoaded', async (event) => {
+  try {
+    // Fetch the gnome names from the local JSON file
+    const response = await fetch('./data/gnomeNames.json');
+    // Parse the JSON data
+    const data = await response.json();
+    // Access the GnomeNames array
+    const dataNames = data.gnomeNames;
+    console.log('Data = ', dataNames);
+
+    // Select a random gnome name from the array
+    const randomIndex = Math.floor(Math.random() * dataNames.length);
+    const gnomeName = dataNames[randomIndex];
+    console.log('Random Gnome Name =', gnomeName);
+
+    // Get references to the HTML elements
+    const userIntElement = document.getElementById('userInt');
+    const gnomeResponseElement = document.getElementById('gnomeResponse');
+    const gnomeElement = document.getElementById('gnome');
+
+    // Update the gnome element with a welcome message and the random gnome name
+    gnomeElement.innerHTML = `<p class="typing-effect">Ahh.. welcome to my humble patch of the earth friend...... My name is ${gnomeName} and I am the gnome on shift right now. Got some green thumb questions? I am your gnome!</p>`;
+  } catch (error) {
+    // Log any errors that occur during the fetch or JSON parsing
+    console.error("Error on DomConentLoad:", error);
+  }
+
   /*
     The code below is an event listener that listens for the 'Enter' key to be pressed.
     When the 'Enter' key is pressed, the code will get the value of the userIntElement
@@ -13,13 +35,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   */
   document.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
+      // Get the user input value
       const userInt = userIntElement.value;
       const apiResponse = "I'm a gnome!";
-      //console.log('User input:', userInt); // Debugging log
-      //gnomeResponseElement.innerText = 'User Input: ' + userInt;
-      gnomeResponseElement.innerHTML = `<p>User Input: ${userInt}</p> <br> <p class="typing-effect">Gnome Response: Calling API - Cx console log..</p>`;
-      //googleApi(userInt);
+
+      // Update the gnome response element with the user input and a placeholder response
+      gnomeResponseElement.innerHTML = `<p>User Input: ${userInt}</p> <br> <p class="typing-effect">Gnome Response Placeholder: Calling API - Cx console log..</p>`;
+      // Hide the gnome element
       gnomeElement.style.display = 'none';
+      // Clear the input field
+      userIntElement.value = '';
     }
   });
 });
