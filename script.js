@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 
         // Update the gnome response element with the user input and the API response
         gnomeResponseElement.innerHTML = `<p>User Input: ${userInt} <br> <br> ${apiResponse}</p>`;
+        // Fade-in the gnome response element
+        gnomeResponseElement.style.opacity = 0;
+        gnomeResponseElement.style.filter = 'blur(4px)';
+        gnomeResponseElement.style.animation = 'fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0)';
       } catch (error) {
         gnomeResponseElement.innerHTML = `<p>User Input: ${userInt}, ERROR> fetching response..</p>`;
       }

@@ -9,12 +9,16 @@ header {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
 }
 
 .gnomeImg {
-    padding: 0 30px;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 100%;
 }
 
 body {
@@ -22,8 +26,8 @@ body {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    margin: 0;
-    padding: 0;
+    margin: 10px 5px;
+    padding: 50px 10px;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     line-height: 1.5;
@@ -32,20 +36,34 @@ body {
     color: $foreground;
 }
 
-.gnome, .gnomeResponse {
+.gnome {
     color: $bg-accent;
     margin: 0 5%;
+    padding-top: 10px;
     word-wrap: break-word; // Ensure text wraps within the container
     overflow-wrap: break-word; // Ensure text wraps within the container
-    width: 90%; // Ensure the container does not exceed the viewport width
+    width: 95%; // Ensure the container does not exceed the viewport width
     opacity: 0;
     filter: blur(4px);
     animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
 .userInt {
+    height: 20px;
     width: 90%;
-    margin: 0 5%;
+    margin: 0px 5%;
+}
+
+.gnomeResponse {
+    color: $bg-accent;
+    padding-top: 10px;
+    margin: 10px 5%;
+    word-wrap: break-word; // Ensure text wraps within the container
+    overflow-wrap: break-word; // Ensure text wraps within the container
+    width: 90%; // Ensure the container does not exceed the viewport width
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-color: $bg-accent $primary;
 }
 
 footer {
