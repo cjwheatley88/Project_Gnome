@@ -18,6 +18,14 @@
         <div class="user" id="user">
             <input type="text" class="userInt" id="userInt" placeholder="This is where you type your message :)">   
         </div>
+        <div class="loaderDiv" id="loaderDiv">
+            <!-- animated svg, appears when waiting on API req,res -->
+            <svg height="40" width="40" class="loader" id="loader">
+                <circle class="dot" cx="10" cy="20" r="3"/>
+                <circle class="dot" cx="20" cy="20" r="3"/>
+                <circle class="dot" cx="30" cy="20" r="3"/>
+            </svg>
+        </div>
         <div class="gnomeResponse" id="gnomeResponse">
             <!-- Renders upon first input from user -->
         </div>

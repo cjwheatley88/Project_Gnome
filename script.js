@@ -15,9 +15,13 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 
     // Get references to the HTML elements
     const gnomeElement = document.getElementById('gnome');
+    const loaderElement = document.getElementById('loaderDiv');
+
+    //Hide the loader element
+    loaderElement.style.display = 'none';
 
     // Update the gnome element with a welcome message and the random gnome name
-    gnomeElement.innerHTML = `<p>Ahh.. welcome to my humble patch of the earth friend...... My name is ${gnomeName} and I am the gnome on shift right now. Got some green thumb questions? I am your gnome!</p>`;
+    gnomeElement.innerHTML = `<p>Ahh.. welcome to my humble patch of the earth friend.. My name is ${gnomeName} and I am the gnome on shift right now. Got some green thumb questions? I am your gnome!</p>`;
   } catch (error) {
     // Log any errors that occur during the fetch or JSON parsing
     console.error("Error on DomConentLoad:", error);
@@ -29,10 +33,14 @@ document.addEventListener('DOMContentLoaded', async (event) => {
       // Get references to the HTML elements
       const gnomeElement = document.getElementById('gnome');
       const userIntElement = document.getElementById('userInt');
-      const gnomeResponseElement = document.getElementById('gnomeResponse');  
+      const gnomeResponseElement = document.getElementById('gnomeResponse');
+      const loaderElement = document.getElementById('loaderDiv');  
 
       // Get the user input value
       const userInt = userIntElement.value;
+
+      // Show the loader element 
+      loaderElement.style.display = 'block';
 
       // Call the server endpoint gemini.js to generate content
       try {
@@ -47,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
         const apiResponse = data.response;
 
         // Update the gnome response element with the user input and the API response
-        gnomeResponseElement.innerHTML = `<p>User Input: ${userInt} <br> <br> ${apiResponse}</p>`;
+        gnomeResponseElement.innerHTML = `<p class="response" id="response">User Input: ${userInt} <br> <br> ${apiResponse}</p>`;
         // Fade-in the gnome response element
         gnomeResponseElement.style.opacity = 0;
         gnomeResponseElement.style.filter = 'blur(4px)';
@@ -59,6 +67,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
       gnomeElement.style.display = 'none';
       // Clear the input field
       userIntElement.value = '';
+      loaderElement.style.display = 'none';
     }
   });
 });
