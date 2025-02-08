@@ -16,9 +16,13 @@ document.addEventListener('DOMContentLoaded', async (event) => {
     // Get references to the HTML elements
     const gnomeElement = document.getElementById('gnome');
     const loaderElement = document.getElementById('loaderDiv');
+    const transcriptElement = document.getElementById('transcript');
 
     //Hide the loader element
     loaderElement.style.display = 'none';
+
+    //Hide the transcript element
+    transcriptElement.style.display = 'none';
 
     // Update the gnome element with a welcome message and the random gnome name
     gnomeElement.innerHTML = `<p>Ahh.. welcome to my humble patch of the earth friend.. My name is ${gnomeName} and I am the gnome on shift right now. Got some green thumb questions? I am your gnome!</p>`;
@@ -34,7 +38,8 @@ document.addEventListener('DOMContentLoaded', async (event) => {
       const gnomeElement = document.getElementById('gnome');
       const userIntElement = document.getElementById('userInt');
       const gnomeResponseElement = document.getElementById('gnomeResponse');
-      const loaderElement = document.getElementById('loaderDiv');  
+      const loaderElement = document.getElementById('loaderDiv');
+      const transcriptElement = document.getElementById('transcript');
 
       // Get the user input value
       const userInt = userIntElement.value;
@@ -68,6 +73,18 @@ document.addEventListener('DOMContentLoaded', async (event) => {
       // Clear the input field
       userIntElement.value = '';
       loaderElement.style.display = 'none';
+      // Show the transcript element
+      transcriptElement.style.display = 'block';
     }
   });
+});
+
+//Event listener for the transcript button
+document.getElementById('btnTranscript').addEventListener('click', function() {
+  // Get references to the HTML elements
+  console.log('Transcript button clicked');
+  // assign the gnom response innerHTML to a variable
+  //write the gnomeResponse to a text file
+  //Download the transcript as a text file
+
 });
