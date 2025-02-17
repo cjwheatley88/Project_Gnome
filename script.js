@@ -1,17 +1,15 @@
 // Add an event listener to the DOM content load event
 document.addEventListener('DOMContentLoaded', async (event) => {
   try {
-    // Fetch the gnome names from the local JSON file
-    const response = await fetch('./data/gnomeNames.json');
-    // Parse the JSON data
+    //Call gnome name from server > endpoint generateGnomeName
+    const response = await fetch('http://localhost:3000/api/test', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     const data = await response.json();
-    // Access the GnomeNames array
-    const dataNames = data.gnomeNames;
-    console.log('Data = ', dataNames);
-
-    // Select a random gnome name from the array
-    const randomIndex = Math.floor(Math.random() * dataNames.length);
-    const gnomeName = dataNames[randomIndex];
+    const gnomeName = data.response;
 
     // Get references to the HTML elements
     const gnomeElement = document.getElementById('gnome');

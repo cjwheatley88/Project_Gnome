@@ -1,0 +1,18 @@
+{
+    "sessionLogs": [
+        {
+            "sessionId": "default-session-id",
+            "userId": "default-user-id",
+            "loginTime": "2023-01-01T00:00:00Z",
+            "logoutTime": "2023-01-01T01:00:00Z",
+            "actions": [
+                {
+                    "actionId": "default-action-id",
+                    "actionType": "default-action-type",
+                    "timestamp": "2023-01-01T00:30:00Z",
+                    "details": "default-action-details"
+                }
+            ]
+        }
+    ]
+}
