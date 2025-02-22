@@ -13,7 +13,7 @@ export async function generateGnomeName() {
     //Select a random gnome name from the array
     const randomIndex = Math.floor(Math.random() * dataNames.length);
     const gnomeName = dataNames[randomIndex];
-    
+    // Return the gnome name
     return gnomeName;
   } catch (error) {
     throw error;

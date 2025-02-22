@@ -1,3 +1,5 @@
+// Should really be called router.js or something similar
+
 import express from 'express';
 import cors from 'cors';
 import { generateContent } from './gemini.js';
@@ -26,7 +28,7 @@ app.post('/api/generate', async (req, res) => {
 });
 
 // end point to generate gnome name
-app.post('/api/test', async (req, res) => {
+app.post('/api/name', async (req, res) => {
   try {
     const response = await generateGnomeName();
     res.json({ response });

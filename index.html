@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gnome It All</title>
-    <link rel="stylesheet" href="styles.scss"> <!-- Ensure the correct file extension -->
+    <title>Gnome</title>
+    <link rel="stylesheet" href="styles.scss">
 </head>
 <body>
     <header>
@@ -13,13 +13,16 @@
     </header>
     <main>
         <div class="gnome" id="gnome">
+            <!-- Renders with page load -->
             <!-- Once an input is taken, hide this section -->
         </div>
         <div class="user" id="user">
+            <!-- Main user interface div -->
             <input type="text" class="userInt" id="userInt" placeholder="This is where you type your message :)">   
         </div>
         <div class="loaderDiv" id="loaderDiv">
             <!-- animated svg, appears when waiting on API req,res -->
+            <!-- look to move this out of the html, not too cluttered right now -->
             <svg height="40" width="40" class="loader" id="loader">
                 <circle class="dot" cx="10" cy="20" r="3"/>
                 <circle class="dot" cx="20" cy="20" r="3"/>
@@ -27,18 +30,19 @@
             </svg>
         </div>
         <div class="gnomeResponse" id="gnomeResponse">
+            <!-- API Response div -->
             <!-- Renders upon first input from user -->
         </div>
-        <!--div for button, which will generate a transcript of the conversation -->
         <div class="transcript" id="transcript">
+            <!--div for button, which will generate a transcript of the conversation -->
             <button class="btnTranscript" id="btnTranscript">
                 <span class="tooltipText">Download Transcript</span>
             </button>
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 Gnome. All rights reserved.</p>
+        <p>&copy; Gnome 2025. All rights reserved.</p>
     </footer>
 </body>
-<script src="script.js"></script> <!-- Ensure the correct file extension -->
+<script src="script.js"></script>
 </html>

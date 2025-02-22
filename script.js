@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', async (event) => {
   try {
     //Call gnome name from server > endpoint generateGnomeName
-    const response = await fetch('http://localhost:3000/api/test', {
+    const response = await fetch('http://localhost:3000/api/name', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,10 +16,8 @@ document.addEventListener('DOMContentLoaded', async (event) => {
     const loaderElement = document.getElementById('loaderDiv');
     const transcriptElement = document.getElementById('transcript');
 
-    //Hide the loader element
+    //Hide elements not required on initial load
     loaderElement.style.display = 'none';
-
-    //Hide the transcript element
     transcriptElement.style.display = 'none';
 
     // Update the gnome element with a welcome message and the random gnome name
@@ -84,5 +82,5 @@ document.getElementById('btnTranscript').addEventListener('click', function() {
   // assign the gnom response innerHTML to a variable
   //write the gnomeResponse to a text file
   //Download the transcript as a text file
-
 });
+
