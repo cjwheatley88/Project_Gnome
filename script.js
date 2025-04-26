@@ -15,10 +15,12 @@ document.addEventListener('DOMContentLoaded', async (event) => {
     const gnomeElement = document.getElementById('gnome');
     const loaderElement = document.getElementById('loaderDiv');
     const transcriptElement = document.getElementById('transcript');
+    const authElement = document.getElementById('authenticate');
 
     //Hide elements not required on initial load
     loaderElement.style.display = 'none';
     transcriptElement.style.display = 'none';
+    authElement.style.display = 'none';
 
     // Update the gnome element with a welcome message and the random gnome name
     gnomeElement.innerHTML = `<p>Ahh.. welcome to my humble patch of the earth friend.. My name is ${gnomeName} and I am the gnome on shift right now. Got some green thumb questions? I am your gnome!</p>`;

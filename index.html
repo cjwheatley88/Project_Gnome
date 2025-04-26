@@ -12,8 +12,14 @@
         <img src="media/gnome Background Removed.png" alt="Gnome" class="gnomeImg">
     </header>
     <main>
-        <div class="gnome" id="gnome">
+        <div class="authenticate" id="authenticate">
             <!-- Renders with page load -->
+            <input type="text" class="name" id="name" placeholder="Enter your name">
+            <input type="password" class="password" id="password" placeholder="Enter your password">
+            <button class="btnAuth" id="btnAuth">Authenticate</button>
+        </div>
+        <div class="gnome" id="gnome">
+            <!-- Renders upon authentication -->
             <!-- Once an input is taken, hide this section -->
         </div>
         <div class="user" id="user">
@@ -35,9 +41,11 @@
         </div>
         <div class="transcript" id="transcript">
             <!--div for button, which will generate a transcript of the conversation -->
-            <button class="btnTranscript" id="btnTranscript">
-                <span class="tooltipText">Download Transcript</span>
-            </button>
+            <a href="/transcripts/transcriptUnique.txt" download>
+                <button class="btnTranscript" id="btnTranscript">
+                    <span class="tooltipText">Download Transcript</span>
+                </button>
+            </a>
         </div>
     </main>
     <footer>
